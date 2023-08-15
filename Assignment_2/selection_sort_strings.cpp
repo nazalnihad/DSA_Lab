@@ -51,3 +51,13 @@ int main()
 
     return 0;
 }
+// Input output
+// Enter no of elements : 9
+
+// Enter elements in the array : one picture is worth more than ten thousand words
+
+// Before sorting : 
+// one picture is worth more than ten thousand words 
+
+// After sorting :
+// is more one picture ten than thousand words worth 
