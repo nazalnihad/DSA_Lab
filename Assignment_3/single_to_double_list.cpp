@@ -69,9 +69,9 @@ void linkedList::doubleList()
     {
         temp->prev = last;
         last = temp;
-        tail = last;
         temp = temp->next;
     }
+    tail = last;
     tail->next = NULL;
     head->prev = NULL;
 }
@@ -108,7 +108,10 @@ void linkedList::disp_t_h()
 int main()
 {
     linkedList l;
-    l.getList(5);
+    int n;
+    cout << "Enter size of list : ";
+    cin >> n;
+    l.getList(n);
     l.singleList();
     l.doubleList();
     l.disp_h_t();
