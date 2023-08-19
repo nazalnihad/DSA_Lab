@@ -119,10 +119,19 @@ void linkedList::countDupes(int key)
 
 void linkedList::deletDupe(int key)
 {
+    int flag = 0;
     while (head != NULL && head->data == key)
     {
         // node *temp = head;
-        head = head->next;
+        flag++;
+        if (flag > 1)
+        {
+            head = head->next;
+        }
+        else
+        {
+            head = head->next;
+        }
         // delete temp;
     }
 
@@ -132,7 +141,16 @@ void linkedList::deletDupe(int key)
         if (temp->next->data == key)
         {
             // node *dupe = temp->next;
-            temp->next = temp->next->next;
+            flag++;
+            if (flag > 1)
+            {
+                temp->next = temp->next->next;
+            }
+            else
+            {
+                temp = temp->next;
+            }
+
             // delete dupe;
         }
         else
@@ -180,11 +198,11 @@ int main()
     l.printList();
     // l.searchNode(3);
     // l.searchNode(10);
-    // l.countDupes(2);
+    l.countDupes(2);
     // l.countDupes(1);
     // l.countDupes(10);
-    // l.deletDupe(2);
-    l.insertAt(2, 5);
+    l.deletDupe(2);
+    // l.insertAt(2, 5);
     l.printList();
 
     return 0;
