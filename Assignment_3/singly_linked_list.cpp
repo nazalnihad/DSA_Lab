@@ -105,7 +105,7 @@ void linkedList::countDupes(int key)
 
     if (found && dupeCount > 1)
     {
-        cout << "\nkey " << key << " is duplicated " << dupeCount << " times";
+        cout << "\nkey " << key << " is duplicated " << dupeCount - 1 << " times";
     }
     else if (found && dupeCount == 1)
     {
@@ -120,22 +120,22 @@ void linkedList::countDupes(int key)
 void linkedList::deletDupe(int key)
 {
     int flag = 0;
-    while (head != NULL && head->data == key)
+    node *temp = head;
+
+    while (temp != NULL && temp->data == key)
     {
-        // node *temp = head;
         flag++;
         if (flag > 1)
         {
             head = head->next;
         }
-        else
-        {
-            head = head->next;
-        }
+
+        temp = temp->next;
+
         // delete temp;
     }
 
-    node *temp = head;
+    temp = head;
     while (temp != NULL && temp->next != NULL)
     {
         if (temp->next->data == key)
@@ -169,11 +169,12 @@ void linkedList::insertAt(int key, int pos)
         node *temp = head;
         head = new node(key);
         head->next = temp;
+        position++;
         return;
     }
-    while (temp != NULL && position < pos - 1)
+    while (temp != NULL && position <= pos)
     {
-        if (position == pos - 1)
+        if (position == pos)
         {
             node *previousNode = temp;
             node *nextNode = temp->next;
@@ -196,13 +197,16 @@ int main()
     linkedList l;
     l.insertNodes(5);
     l.printList();
-    // l.searchNode(3);
+    l.searchNode(3);
     // l.searchNode(10);
     l.countDupes(2);
     // l.countDupes(1);
     // l.countDupes(10);
+    // l.deletDupe(2);
+    l.insertAt(2, 1);
+    l.countDupes(2);
+    l.printList();
     l.deletDupe(2);
-    // l.insertAt(2, 5);
     l.printList();
 
     return 0;
