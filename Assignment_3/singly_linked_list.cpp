@@ -58,6 +58,10 @@ void linkedList::printList()
     while (temp != NULL)
     {
         cout << temp->data << " -> ";
+        if (temp->next == NULL)
+        {
+            cout << "NULL";
+        }
         temp = temp->next;
     }
 }
@@ -67,32 +71,30 @@ void linkedList::searchNode(int key)
     int position = 1;
     node *temp = head;
     bool found = false;
+
     while (temp != NULL)
     {
         if (temp->data == key)
         {
             found = true;
-            break;
+            cout << "\nKey " << key << " found at position " << position;
         }
         temp = temp->next;
         position++;
     }
 
-    if (found)
+    if (!found)
     {
-        cout << "\nKey " << key << " found at position " << position;
-    }
-    else
-    {
-        cout << "\nKEY NOT FOUND ";
+        cout << "\nKEY NOT FOUND";
     }
 }
 
 void linkedList::countDupes(int key)
 {
     int dupeCount = 0;
-    bool found = false;
     node *temp = head;
+    bool found = false;
+
     while (temp != NULL)
     {
         if (temp->data == key)
@@ -122,6 +124,8 @@ void linkedList::deletDupe(int key)
     int flag = 0;
     node *temp = head;
 
+    bool found = false; // Initialize the found flag
+
     while (temp != NULL && temp->data == key)
     {
         flag++;
@@ -131,6 +135,7 @@ void linkedList::deletDupe(int key)
         }
 
         temp = temp->next;
+        found = true; // Mark as found
 
         // delete temp;
     }
@@ -145,6 +150,7 @@ void linkedList::deletDupe(int key)
             if (flag > 1)
             {
                 temp->next = temp->next->next;
+                found = true;
             }
             else
             {
@@ -157,6 +163,17 @@ void linkedList::deletDupe(int key)
         {
             temp = temp->next;
         }
+    }
+
+    if (!found)
+    {
+        cout << "\nKEY NOT FOUND";
+        return;
+    }
+
+    if (flag == 1)
+    {
+        cout << "\nKey " << key << " is not repeated";
     }
 }
 
@@ -186,7 +203,7 @@ void linkedList::insertAt(int key, int pos)
         temp = temp->next;
     }
 
-    if (pos - 1 > position)
+    if (temp == NULL)
     {
         cout << "\nLIST IS TOO SMALL";
         return;
@@ -195,19 +212,135 @@ void linkedList::insertAt(int key, int pos)
 int main()
 {
     linkedList l;
-    l.insertNodes(5);
-    l.printList();
-    l.searchNode(3);
-    // l.searchNode(10);
-    l.countDupes(2);
-    // l.countDupes(1);
-    // l.countDupes(10);
-    // l.deletDupe(2);
-    l.insertAt(2, 1);
-    l.countDupes(2);
-    l.printList();
-    l.deletDupe(2);
-    l.printList();
+    int n;
+    cout << "Enter the number of elements in the list: ";
+    cin >> n;
+    l.insertNodes(n);
+
+    char choice;
+    while (true)
+    {
+        cout << "\n\nMenu:\n";
+        cout << "s key - Search for an element\n";
+        cout << "c key - Count duplicates\n";
+        cout << "r key - Remove duplicates\n";
+        cout << "i key pos - Insert element at position\n";
+        cout << "d - to display the list\n";
+        cout << "e - Exit\n";
+        cout << "Enter your choice: ";
+
+        cin >> choice;
+        if (choice == 'e')
+        {
+            break;
+        }
+
+        int key, pos;
+        switch (choice)
+        {
+        case 's':
+            cout << "Enter the key to search: ";
+            cin >> key;
+            l.searchNode(key);
+            break;
+        case 'c':
+            cout << "Enter the key to count duplicates: ";
+            cin >> key;
+            l.countDupes(key);
+            break;
+        case 'r':
+            cout << "Enter the key to remove duplicates: ";
+            cin >> key;
+            l.deletDupe(key);
+            l.printList();
+            break;
+        case 'i':
+            cout << "Enter the key to insert: ";
+            cin >> key;
+            cout << "Enter the position to insert: ";
+            cin >> pos;
+            l.insertAt(key, pos);
+            break;
+        case 'd':
+            l.printList();
+            break;
+        default:
+            cout << "Invalid choice. Please try again.\n";
+            break;
+        }
+    }
 
     return 0;
 }
+
+// INPUT OUTPUT
+// Enter the number of elements in the list: 5
+// Enter the elements separated by spaces : 1 2 2 3 4
+
+// Menu:
+// s key - Search for an element
+// c key - Count duplicates
+// r key - Remove duplicates
+// i key pos - Insert element at position
+// d - to display the list
+// e - Exit
+// Enter your choice: s
+// Enter the key to search: 2
+
+// Key 2 found at position 2
+// Key 2 found at position 3
+
+// Menu:
+// s key - Search for an element
+// c key - Count duplicates
+// r key - Remove duplicates
+// i key pos - Insert element at position
+// d - to display the list
+// e - Exit
+// Enter your choice: c
+// Enter the key to count duplicates: 2
+
+// key 2 is duplicated 1 times
+
+// Menu:
+// s key - Search for an element
+// c key - Count duplicates
+// r key - Remove duplicates
+// i key pos - Insert element at position
+// d - to display the list
+// e - Exit
+// Enter your choice: r
+// Enter the key to remove duplicates: 2
+
+// 1 -> 2 -> 3 -> 4 -> NULL
+
+// Menu:
+// s key - Search for an element
+// c key - Count duplicates
+// r key - Remove duplicates
+// i key pos - Insert element at position
+// d - to display the list
+// e - Exit
+// Enter your choice: i
+// Enter the key to insert: 2
+// Enter the position to insert: 1
+
+// Menu:
+// s key - Search for an element
+// c key - Count duplicates
+// r key - Remove duplicates
+// i key pos - Insert element at position
+// d - to display the list
+// e - Exit
+// Enter your choice: d
+
+// 2 -> 1 -> 2 -> 3 -> 4 -> NULL
+
+// Menu:
+// s key - Search for an element
+// c key - Count duplicates
+// r key - Remove duplicates
+// i key pos - Insert element at position
+// d - to display the list
+// e - Exit
+// Enter your choice: e

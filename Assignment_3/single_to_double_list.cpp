@@ -76,7 +76,6 @@ void linkedList::doubleList()
     head->prev = NULL;
 }
 
-// head to tail display
 void linkedList::disp_h_t()
 {
     node *temp = head;
@@ -86,9 +85,9 @@ void linkedList::disp_h_t()
         cout << temp->data << " -> ";
         temp = temp->next;
     }
+    cout << "NULL";
 }
 
-// tail to head display
 void linkedList::disp_t_h()
 {
     node *temp = tail;
@@ -102,7 +101,7 @@ void linkedList::disp_t_h()
         }
         temp = temp->prev;
     }
-    cout << endl;
+    cout << "->NULL\n";
 }
 
 int main()
@@ -114,8 +113,60 @@ int main()
     l.getList(n);
     l.singleList();
     l.doubleList();
-    l.disp_h_t();
-    l.disp_t_h();
+
+    bool exitMenu = false;
+    while (!exitMenu)
+    {
+        cout << "\nMenu:\n";
+        cout << "1 - Display list from head to tail\n";
+        cout << "2 - Display list from tail to head\n";
+        cout << "3 - Exit\n";
+        cout << "Enter your choice: ";
+
+        int choice;
+        cin >> choice;
+
+        switch (choice)
+        {
+        case 1:
+            l.disp_h_t();
+            break;
+        case 2:
+            l.disp_t_h();
+            break;
+        case 3:
+            exitMenu = true;
+            break;
+        default:
+            cout << "try again.\n";
+            break;
+        }
+    }
 
     return 0;
 }
+
+// INPUT OUTPUT
+// Enter size of list : 9
+// Enter the elements in the list : 6 4 10 13 1 7 88 10 5
+
+// Menu:
+// 1 - Display list from head to tail
+// 2 - Display list from tail to head
+// 3 - Exit
+// Enter your choice: 1
+
+// Head to tail display 6 -> 4 -> 10 -> 13 -> 1 -> 7 -> 88 -> 10 -> 5 -> NULL
+// Menu:
+// 1 - Display list from head to tail
+// 2 - Display list from tail to head
+// 3 - Exit
+// Enter your choice: 2
+
+// Tail to head display: 5 -> 10 -> 88 -> 7 -> 1 -> 13 -> 10 -> 4 -> 6->NULL
+
+// Menu:
+// 1 - Display list from head to tail
+// 2 - Display list from tail to head
+// 3 - Exit
+// Enter your choice: 3

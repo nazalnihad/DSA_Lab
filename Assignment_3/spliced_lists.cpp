@@ -81,10 +81,8 @@ void linkedList::spliceList()
 
 void linkedList::printList()
 {
-    node *temp1 = head1;
-    node *temp2 = head2;
-
     cout << "\nList 1: ";
+    node *temp1 = head1;
     while (temp1 != NULL)
     {
         cout << temp1->data;
@@ -92,10 +90,19 @@ void linkedList::printList()
         {
             cout << " -> ";
         }
+        else
+        {
+            cout << " -> NULL";
+        }
         temp1 = temp1->next;
+    }
+    if (head1 == NULL)
+    {
+        cout << "NULL";
     }
 
     cout << "\nList 2: ";
+    node *temp2 = head2;
     while (temp2 != NULL)
     {
         cout << temp2->data;
@@ -103,9 +110,18 @@ void linkedList::printList()
         {
             cout << " -> ";
         }
+        else
+        {
+            cout << " -> NULL";
+        }
         temp2 = temp2->next;
     }
+    if (head2 == NULL)
+    {
+        cout << "NULL";
+    }
 }
+
 int main()
 {
     int n;
@@ -117,3 +133,11 @@ int main()
     l.printList();
     return 0;
 }
+
+// INPUT OUTPUT
+// Enter the number of elements in your main list : 9
+
+// Enter the elements with space : 6 4 10 13 1 7 88 10 5
+
+// List 1: 6 -> 10 -> 1 -> 88 -> 5 -> NULL
+// List 2: 4 -> 13 -> 7 -> 10 -> NULL
