@@ -12,6 +12,7 @@ void binary(int n)
     }
     else
     {
+        cout << 0;
         return;
     }
 }

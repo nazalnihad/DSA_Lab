@@ -124,7 +124,7 @@ void linkedList::deletDupe(int key)
     int flag = 0;
     node *temp = head;
 
-    bool found = false; // Initialize the found flag
+    bool found = false;
 
     while (temp != NULL && temp->data == key)
     {
@@ -135,7 +135,7 @@ void linkedList::deletDupe(int key)
         }
 
         temp = temp->next;
-        found = true; // Mark as found
+        found = true;
 
         // delete temp;
     }
@@ -312,7 +312,7 @@ int main()
 // Enter your choice: r
 // Enter the key to remove duplicates: 2
 
-// 1 -> 2 -> 3 -> 4 -> NULL
+// 1 -> 2 -> 1 -> 4 -> NULL
 
 // Menu:
 // s key - Search for an element
