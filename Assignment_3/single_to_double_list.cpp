@@ -145,28 +145,3 @@ int main()
 
     return 0;
 }
-
-// INPUT OUTPUT
-// Enter size of list : 9
-// Enter the elements in the list : 6 4 10 13 1 7 88 10 5
-
-// Menu:
-// 1 - Display list from head to tail
-// 2 - Display list from tail to head
-// 3 - Exit
-// Enter your choice: 1
-
-// Head to tail display 6 -> 4 -> 10 -> 13 -> 1 -> 7 -> 88 -> 10 -> 5 -> NULL
-// Menu:
-// 1 - Display list from head to tail
-// 2 - Display list from tail to head
-// 3 - Exit
-// Enter your choice: 2
-
-// Tail to head display: 5 -> 10 -> 88 -> 7 -> 1 -> 13 -> 10 -> 4 -> 6->NULL
-
-// Menu:
-// 1 - Display list from head to tail
-// 2 - Display list from tail to head
-// 3 - Exit
-// Enter your choice: 3

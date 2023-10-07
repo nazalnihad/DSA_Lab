@@ -1,5 +1,3 @@
-// * Write a program to count the total number of duplicate elements in an unsorted character
-// array in O(n) time complexity.
 
 #include <iostream>
 using namespace std;
@@ -43,9 +41,3 @@ int main()
 
     return 0;
 }
-
-// OUTPUT
-
-// Enter size of the array : 5
-// Enter elements of the array : a b d c d
-// Total number of duplicate elements: 1

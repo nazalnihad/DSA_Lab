@@ -1,5 +1,3 @@
-// * Write a program to find the second largest element of a given integer array. Can you
-// modify it to find the k-th largest element?
 
 #include <iostream>
 using namespace std;
@@ -86,40 +84,3 @@ int main()
         } while (option != 3);
     }
 }
-
-// OUTPUT
-
-// 1 - to start
-// any other key to quit
-//  : 1
-// Enter the size of the array : 5
-// Enter the array elements : 1 2 3 4 5
-
-// 1 - to find the 2nd largest array
-// 2 - to find the Kth largest element
-// 3 - to quit
-//  : 1
-// second largest = 4
-
-// 1 - to find the 2nd largest array
-// 2 - to find the Kth largest element
-// 3 - to quit
-//  : 2
-// Enter k , for kth largest : 3
-// The 3th largest number of the array is : 3
-
-// 1 - to find the 2nd largest array
-// 2 - to find the Kth largest element
-// 3 - to quit
-//  : 2
-// Enter k , for kth largest : 4
-// The 4th largest number of the array is : 2
-
-// 1 - to find the 2nd largest array
-// 2 - to find the Kth largest element
-// 3 - to quit
-//  : 3
-
-// 1 - to continue with another array
-// any other key to quit
-//  : 2

@@ -1,15 +1,3 @@
-// Write a menu driven program that repeatedly reads an option from the terminal to do the
-// following array operations on array ARR:
-// Option 1. Read integer n (<=100) , the size of array followed by n integer elements of
-// ARR
-// Option 2. Print the elements of array ARR
-// Option 3. Read an integer elem to search in the array. Print FOUND/SORRY
-// accordingly
-// Option 4. Print the largest and smallest element of the array
-// Option 5. Exit
-// The program should be modular and should contain the following functions :
-// main(), read_arr(int[] arr, int n), print_arr(int[] arr, int n), search_arr(int[] arr, int n,
-// int elem), get_max(int[] arr, int n), get_min(int[] arr, int n)
 
 #include <iostream>
 using namespace std;
@@ -131,61 +119,3 @@ int main()
     }
     return 0;
 }
-
-// OUTPUT
-
-// 1 - to start
-//  any other key to quit
-//  : 1
-
-// Enter the size of the array : 5
-
-// 1 - to read array
-// 2 - print array
-// 3 - search in array
-// 4 - to get min and max
-// 5 - to exit or start new array
-//  : 1
-// Enter element 1 : 1
-// Enter element 2 : 2
-// Enter element 3 : 3
-// Enter element 4 : 4
-// Enter element 5 : 5
-
-// 1 - to read array
-// 2 - print array
-// 3 - search in array
-// 4 - to get min and max
-// 5 - to exit or start new array
-//  : 2
-
-// 1 2 3 4 5
-// 1 - to read array
-// 2 - print array
-// 3 - search in array
-// 4 - to get min and max
-// 5 - to exit or start new array
-//  : 3
-
-// Enter the element you want to search : 3
-// FOUND
-
-// 1 - to read array
-// 2 - print array
-// 3 - search in array
-// 4 - to get min and max
-// 5 - to exit or start new array
-//  : 4
-
-// Max = 5
-// Min = 1
-
-// 1 - to read array
-// 2 - print array
-// 3 - search in array
-// 4 - to get min and max
-// 5 - to exit or start new array
-//  : 5
-// 1 - to start with another array
-// any other key to exit
-//  : 2

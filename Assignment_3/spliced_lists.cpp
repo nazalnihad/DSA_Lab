@@ -133,11 +133,3 @@ int main()
     l.printList();
     return 0;
 }
-
-// INPUT OUTPUT
-// Enter the number of elements in your main list : 9
-
-// Enter the elements with space : 6 4 10 13 1 7 88 10 5
-
-// List 1: 6 -> 10 -> 1 -> 88 -> 5 -> NULL
-// List 2: 4 -> 13 -> 7 -> 10 -> NULL

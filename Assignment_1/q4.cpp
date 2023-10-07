@@ -1,5 +1,4 @@
-// Write a recursive function that checks whether a string is a palindrome (a palindrome is a
-// string that's the same when reads forwards and backwards.)
+
 #include <iostream>
 using namespace std;
 
@@ -32,8 +31,3 @@ int main()
     }
     return 0;
 }
-
-// OUTPUT
-
-// Enter the string : malayalam
-// the word is a palindrome

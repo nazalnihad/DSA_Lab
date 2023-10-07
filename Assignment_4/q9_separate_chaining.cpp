@@ -223,8 +223,8 @@ int main()
 // 4. Display Table
 // 5. Exit
 // Enter your choice: 4
-// Index 0: 21
-// Index 1: 1 11
+// Index 0:
+// Index 1: 1 11 21
 // Index 2:
 // Index 3: 3 13 23
 // Index 4:
@@ -242,8 +242,8 @@ int main()
 // 5. Exit
 // Enter your choice: 3
 // Enter key to search: 11
-// Found key
 
+// Found key
 // Menu:
 // 1. Insert
 // 2. Delete
@@ -252,8 +252,8 @@ int main()
 // 5. Exit
 // Enter your choice: 3
 // Enter key to search: 5
-// Key not found
 
+// Key not found
 // Menu:
 // 1. Insert
 // 2. Delete
@@ -262,17 +262,6 @@ int main()
 // 5. Exit
 // Enter your choice: 2
 // Enter key to delete: 11
-// Key deleted
-
-// Menu:
-// 1. Insert
-// 2. Delete
-// 3. Search
-// 4. Display Table
-// 5. Exit
-// Enter your choice: 2
-// Enter key to delete: 5
-// Key not found
 
 // Menu:
 // 1. Insert
@@ -281,8 +270,8 @@ int main()
 // 4. Display Table
 // 5. Exit
 // Enter your choice: 4
-// Index 0: 21
-// Index 1: 1
+// Index 0:
+// Index 1: 1 21
 // Index 2:
 // Index 3: 3 13 23
 // Index 4:

@@ -1,4 +1,3 @@
-// Write a recursive function that converts a decimal number into its binary representation.
 #include <iostream>
 using namespace std;
 
@@ -25,8 +24,3 @@ int main()
     binary(num);
     return 0;
 }
-
-// OUTPUT
-
-// Enter number to convert to binary : 7
-// The converted binary is : 111

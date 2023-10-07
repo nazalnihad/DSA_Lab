@@ -46,14 +46,3 @@ int main()
 
     return 0;
 }
-
-// input output
-// Enter no of elements : 8
-
-// Enter elements in the array : 623.43 82.412 534.612 137.6 -733.216 28.16 363.532 8.34423
-
-// Before sorting :
-// 623.43 82.412 534.612 137.6 -733.216 28.16 363.532 8.34423
-
-// After sorting :
-// 623.43 534.612 363.532 137.6 82.412 28.16 8.34423 -733.216

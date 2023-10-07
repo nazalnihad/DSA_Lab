@@ -1,5 +1,3 @@
-// * Write a program to merge two sorted arrays of the same size to get a resultant array which
-// is sorted in the reverse order. Analyse the time complexity of your algorithm
 
 #include <iostream>
 using namespace std;
@@ -72,13 +70,3 @@ int main()
 
     return 0;
 }
-
-// OUTPUT
-
-// Enter size of the arrays : 4
-
-// Enter elements of array 1 in sorted order : 1 3 5 7
-
-// Enter elements of array 2 in sorted order : 2 4 6 8
-// Merged and reverse sorted array is
-// 8 7 6 5 4 3 2 1
