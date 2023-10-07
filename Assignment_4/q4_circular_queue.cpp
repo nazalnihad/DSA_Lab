@@ -41,7 +41,7 @@ public:
     {
         if (front == -1 && rear == -1)
         {
-            cout << "\nqueue is empty";
+            cout << "queue is empty." << endl;
             return;
         }
         if (front == rear)
@@ -77,25 +77,125 @@ public:
 
 int main()
 {
-    circular_queue cq(5);
+    int n, choice, val;
+    cout << "\nEnter the size of queue : ";
+    cin >> n;
+    circular_queue cq(n);
 
-    cq.enqueue(1);
-    cq.enqueue(2);
-    cq.enqueue(3);
-    cq.enqueue(4);
-    cq.enqueue(5);
+    while (true)
+    {
+        cout << "\nMenu:\n";
+        cout << "1. Enqueue\n";
+        cout << "2. Dequeue\n";
+        cout << "3. Display Queue\n";
+        cout << "4. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
 
-    cq.display();
+        switch (choice)
+        {
+        case 1:
+            cout << "Enter value to enqueue: ";
+            cin >> val;
+            cq.enqueue(val);
+            break;
 
-    cq.dequeue();
-    cq.dequeue();
+        case 2:
+            cq.dequeue();
+            break;
 
-    cq.display();
+        case 3:
+            cq.display();
+            break;
 
-    cq.enqueue(6);
-    cq.enqueue(7);
+        case 4:
+            exit(0);
 
-    cq.display();
+        default:
+            cout << "Invalid choice. Please try again." << endl;
+        }
+    }
 
     return 0;
 }
+
+// Enter the size of queue : 5
+
+// Menu:
+// 1. Enqueue
+// 2. Dequeue
+// 3. Display Queue
+// 4. Exit
+// Enter your choice: 1
+// Enter value to enqueue: 1
+
+// Menu:
+// 1. Enqueue
+// 2. Dequeue
+// 3. Display Queue
+// 4. Exit
+// Enter your choice: 1
+// Enter value to enqueue: 2
+
+// Menu:
+// 1. Enqueue
+// 2. Dequeue
+// 3. Display Queue
+// 4. Exit
+// Enter your choice: 1
+// Enter value to enqueue: 3
+
+// Menu:
+// 1. Enqueue
+// 2. Dequeue
+// 3. Display Queue
+// 4. Exit
+// Enter your choice: 1
+// Enter value to enqueue: 4
+
+// Menu:
+// 1. Enqueue
+// 2. Dequeue
+// 3. Display Queue
+// 4. Exit
+// Enter your choice: 1
+// Enter value to enqueue: 5
+
+// Menu:
+// 1. Enqueue
+// 2. Dequeue
+// 3. Display Queue
+// 4. Exit
+// Enter your choice: 1
+// Enter value to enqueue: 6
+// overflow
+
+// Menu:
+// 1. Enqueue
+// 2. Dequeue
+// 3. Display Queue
+// 4. Exit
+// Enter your choice: 3
+// 1 2 3 4 5
+
+// Menu:
+// 1. Enqueue
+// 2. Dequeue
+// 3. Display Queue
+// 4. Exit
+// Enter your choice: 2
+
+// Menu:
+// 1. Enqueue
+// 2. Dequeue
+// 3. Display Queue
+// 4. Exit
+// Enter your choice: 3
+// 2 3 4 5
+
+// Menu:
+// 1. Enqueue
+// 2. Dequeue
+// 3. Display Queue
+// 4. Exit
+// Enter your choice: 4

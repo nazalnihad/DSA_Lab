@@ -6,7 +6,6 @@ struct node
     int data;
     node *next;
 
-    // node
     node(int n)
     {
         data = n;
@@ -56,7 +55,6 @@ public:
     void DELETE(int key)
     {
         int pos = hash(key);
-        // node *new_node = new node(n);
         node *prev = nullptr;
 
         node *temp = table[pos];
@@ -77,7 +75,7 @@ public:
             prev = temp;
             temp = temp->next;
         }
-        cout << "\nkey not found";
+        cout << "\nKey not found";
     }
 
     void SEARCH(int key)
@@ -94,7 +92,7 @@ public:
             }
             temp = temp->next;
         }
-        cout << "\nkey not found";
+        cout << "\nKey not found";
     }
 
     void SHOW()
@@ -105,7 +103,7 @@ public:
             node *temp = table[i];
             while (temp != nullptr)
             {
-                std::cout << temp->data << " ";
+                cout << temp->data << " ";
                 temp = temp->next;
             }
             cout << "\n";
@@ -116,26 +114,188 @@ public:
 int main()
 {
     hash_table ht;
+    int choice, key;
 
-    ht.INSERT(1);
-    ht.INSERT(11);
-    ht.INSERT(21);
-    ht.INSERT(3);
-    ht.INSERT(13);
-    ht.INSERT(23);
+    while (true)
+    {
+        cout << "\nMenu:\n";
+        cout << "1. Insert\n";
+        cout << "2. Delete\n";
+        cout << "3. Search\n";
+        cout << "4. Display Table\n";
+        cout << "5. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
 
-    cout << "Hash Table after insertions:" << endl;
-    ht.SHOW();
+        switch (choice)
+        {
+        case 1:
+            cout << "Enter key to insert: ";
+            cin >> key;
+            ht.INSERT(key);
+            break;
 
-    ht.SEARCH(11);
-    ht.SEARCH(5);
+        case 2:
+            cout << "Enter key to delete: ";
+            cin >> key;
+            ht.DELETE(key);
+            break;
 
-    ht.DELETE(11);
-    ht.DELETE(5); // Attempting to delete a key that doesn't exist
+        case 3:
+            cout << "Enter key to search: ";
+            cin >> key;
+            ht.SEARCH(key);
+            break;
 
-    cout << "\nHash Table after deletions:"
-         << "\n";
-    ht.SHOW();
+        case 4:
+            ht.SHOW();
+            break;
+
+        case 5:
+            exit(0);
+
+        default:
+            cout << "Invalid choice. Please try again." << endl;
+        }
+    }
 
     return 0;
 }
+
+// Menu:
+// 1. Insert
+// 2. Delete
+// 3. Search
+// 4. Display Table
+// 5. Exit
+// Enter your choice: 1
+// Enter key to insert: 1
+
+// Menu:
+// 1. Insert
+// 2. Delete
+// 3. Search
+// 4. Display Table
+// 5. Exit
+// Enter your choice: 1
+// Enter key to insert: 11
+
+// Menu:
+// 1. Insert
+// 2. Delete
+// 3. Search
+// 4. Display Table
+// 5. Exit
+// Enter your choice: 1
+// Enter key to insert: 21
+
+// Menu:
+// 1. Insert
+// 2. Delete
+// 3. Search
+// 4. Display Table
+// 5. Exit
+// Enter your choice: 1
+// Enter key to insert: 3
+
+// Menu:
+// 1. Insert
+// 2. Delete
+// 3. Search
+// 4. Display Table
+// 5. Exit
+// Enter your choice: 1
+// Enter key to insert: 13
+
+// Menu:
+// 1. Insert
+// 2. Delete
+// 3. Search
+// 4. Display Table
+// 5. Exit
+// Enter your choice: 1
+// Enter key to insert: 23
+
+// Menu:
+// 1. Insert
+// 2. Delete
+// 3. Search
+// 4. Display Table
+// 5. Exit
+// Enter your choice: 4
+// Index 0: 21
+// Index 1: 1 11
+// Index 2:
+// Index 3: 3 13 23
+// Index 4:
+// Index 5:
+// Index 6:
+// Index 7:
+// Index 8:
+// Index 9:
+
+// Menu:
+// 1. Insert
+// 2. Delete
+// 3. Search
+// 4. Display Table
+// 5. Exit
+// Enter your choice: 3
+// Enter key to search: 11
+// Found key
+
+// Menu:
+// 1. Insert
+// 2. Delete
+// 3. Search
+// 4. Display Table
+// 5. Exit
+// Enter your choice: 3
+// Enter key to search: 5
+// Key not found
+
+// Menu:
+// 1. Insert
+// 2. Delete
+// 3. Search
+// 4. Display Table
+// 5. Exit
+// Enter your choice: 2
+// Enter key to delete: 11
+// Key deleted
+
+// Menu:
+// 1. Insert
+// 2. Delete
+// 3. Search
+// 4. Display Table
+// 5. Exit
+// Enter your choice: 2
+// Enter key to delete: 5
+// Key not found
+
+// Menu:
+// 1. Insert
+// 2. Delete
+// 3. Search
+// 4. Display Table
+// 5. Exit
+// Enter your choice: 4
+// Index 0: 21
+// Index 1: 1
+// Index 2:
+// Index 3: 3 13 23
+// Index 4:
+// Index 5:
+// Index 6:
+// Index 7:
+// Index 8:
+// Index 9:
+
+// Menu:
+// 1. Insert
+// 2. Delete
+// 3. Search
+// 4. Display Table
+// 5. Exit
+// Enter your choice: 5

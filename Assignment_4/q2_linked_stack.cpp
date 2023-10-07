@@ -42,8 +42,16 @@ public:
 
     void pop()
     {
+        if (isEmpty())
+        {
+            cout << "\nStack empty";
+            return;
+        }
+
         cout << "\npopped " << head->data;
+        node *temp = head;
         head = head->next;
+        delete temp;
         size--;
     }
 
@@ -68,19 +76,105 @@ public:
         }
     }
 };
+
 int main()
 {
     linked_stack a;
-    a.push(1);
-    a.push(2);
-    a.push(3);
-    a.push(4);
-    a.push(5);
-    // a.push(2);
-    a.Size();
-    a.pop();
-    a.Size();
-    a.pop();
-    a.Size();
-    a.show();
+    int choice, val;
+
+    while (true)
+    {
+        cout << "\nMenu:\n";
+        cout << "1. Push\n";
+        cout << "2. Pop\n";
+        cout << "3. Get Size\n";
+        cout << "4. Show Stack\n";
+        cout << "5. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        switch (choice)
+        {
+        case 1:
+            cout << "Enter value to push: ";
+            cin >> val;
+            a.push(val);
+            break;
+
+        case 2:
+            a.pop();
+            break;
+
+        case 3:
+            a.Size();
+            break;
+
+        case 4:
+            a.show();
+            break;
+
+        case 5:
+            exit(0);
+
+        default:
+            cout << "Invalid choice. Please try again.";
+        }
+    }
+
+    return 0;
 }
+
+// Menu:
+// 1. Push
+// 2. Pop
+// 3. Get Size
+// 4. Show Stack
+// 5. Exit
+// Enter your choice: 1
+// Enter value to push: 1
+
+// Menu:
+// 1. Push
+// 2. Pop
+// 3. Get Size
+// 4. Show Stack
+// 5. Exit
+// Enter your choice: 1
+// Enter value to push: 2
+
+// Menu:
+// 1. Push
+// 2. Pop
+// 3. Get Size
+// 4. Show Stack
+// 5. Exit
+// Enter your choice: 1
+// Enter value to push: 3
+
+// Menu:
+// 1. Push
+// 2. Pop
+// 3. Get Size
+// 4. Show Stack
+// 5. Exit
+// Enter your choice: 4
+
+// 3
+// 2
+// 1
+// Menu:
+// 1. Push
+// 2. Pop
+// 3. Get Size
+// 4. Show Stack
+// 5. Exit
+// Enter your choice: 2
+
+// popped 3
+// Menu:
+// 1. Push
+// 2. Pop
+// 3. Get Size
+// 4. Show Stack
+// 5. Exit
+// Enter your choice: 5

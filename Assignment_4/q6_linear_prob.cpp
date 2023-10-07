@@ -1,6 +1,3 @@
-// Implement a hash table with linear probing using array with the following operations :
-// INSERT(key), DELETE(key), SEARCH(key).
-
 #include <iostream>
 using namespace std;
 
@@ -29,7 +26,7 @@ public:
     {
         if (size >= tb_size)
         {
-            cout << "\ntable full";
+            cout << "\nTable full";
             return;
         }
 
@@ -51,14 +48,14 @@ public:
         {
             if (table[pos] == key)
             {
-                cout << "\nKey deleted ";
+                cout << "\nKey " << key << " deleted";
                 table[pos] = -1;
                 size--;
                 return;
             }
             pos = (pos + 1) % tb_size;
         }
-        cout << "\nkey not found";
+        cout << "\nKey not found";
     }
 
     void SEARCH(int key)
@@ -69,23 +66,22 @@ public:
         {
             if (table[pos] == key)
             {
-                cout << "\nKey found at index " << pos;
+                cout << "\nKey " << key << " found at index " << pos;
                 return;
             }
             pos = (pos + 1) % tb_size;
         }
-        cout << "\nkey not found";
+        cout << "\nKey not found";
     }
 
     void SHOW()
     {
-
         for (int i = 0; i < tb_size; i++)
         {
             if (table[i] != -1)
             {
                 cout << "\n"
-                     << table[i];
+                     << i << ": " << table[i];
             }
         }
     }
@@ -94,23 +90,115 @@ public:
 int main()
 {
     hash_table h;
-    h.INSERT(1);
-    h.INSERT(3);
-    h.INSERT(5);
-    h.INSERT(6);
-    h.INSERT(6);
-    // h.INSERT(6);
-    // h.INSERT(6);
-    // h.INSERT(6);
-    // h.INSERT(6);
-    // h.INSERT(6);
-    // h.INSERT(6);
+    int choice, key;
 
-    h.SHOW();
+    while (true)
+    {
+        cout << "\nMenu:\n";
+        cout << "1. Insert\n";
+        cout << "2. Delete\n";
+        cout << "3. Search\n";
+        cout << "4. Display Table\n";
+        cout << "5. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
 
-    h.SEARCH(3);
-    h.DELETE(3);
-    h.SHOW();
+        switch (choice)
+        {
+        case 1:
+            cout << "Enter key to insert: ";
+            cin >> key;
+            h.INSERT(key);
+            break;
+
+        case 2:
+            cout << "Enter key to delete: ";
+            cin >> key;
+            h.DELETE(key);
+            break;
+
+        case 3:
+            cout << "Enter key to search: ";
+            cin >> key;
+            h.SEARCH(key);
+            break;
+
+        case 4:
+            h.SHOW();
+            break;
+
+        case 5:
+            exit(0);
+
+        default:
+            cout << "Invalid choice. Please try again." << endl;
+        }
+    }
 
     return 0;
 }
+
+// Menu:
+// 1. Insert
+// 2. Delete
+// 3. Search
+// 4. Display Table
+// 5. Exit
+// Enter your choice: 1
+// Enter key to insert: 5
+
+// Menu:
+// 1. Insert
+// 2. Delete
+// 3. Search
+// 4. Display Table
+// 5. Exit
+// Enter your choice: 1
+// Enter key to insert: 15
+
+// Menu:
+// 1. Insert
+// 2. Delete
+// 3. Search
+// 4. Display Table
+// 5. Exit
+// Enter your choice: 1
+// Enter key to insert: 25
+
+// Menu:
+// 1. Insert
+// 2. Delete
+// 3. Search
+// 4. Display Table
+// 5. Exit
+// Enter your choice: 3
+// Enter key to search: 15
+// Key 15 found at index 5
+
+// Menu:
+// 1. Insert
+// 2. Delete
+// 3. Search
+// 4. Display Table
+// 5. Exit
+// Enter your choice: 2
+// Enter key to delete: 15
+// Key 15 deleted
+
+// Menu:
+// 1. Insert
+// 2. Delete
+// 3. Search
+// 4. Display Table
+// 5. Exit
+// Enter your choice: 4
+// 0: 5
+// 2: 25
+
+// Menu:
+// 1. Insert
+// 2. Delete
+// 3. Search
+// 4. Display Table
+// 5. Exit
+// Enter your choice: 5
